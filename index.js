@@ -163,8 +163,26 @@ console.log(trevor.speak());
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
 class Instructor {
-  
+  constructor(attributes){
+    this.specialty = attributes.specialty;
+    this.favLanguage = attributes.favLanguage;
+    this.catchPhrase = attributes.catchPhrase;
+  }
+  demo(subject){
+    return `Today we learned about ${subject}`;
+  }
+  grade(student, subject){
+    return `${student} receives a perfect score on ${subject}`;
+  }
 }
+
+const brit = new Instructor({
+  specialty: 'JavaScript',
+  favLanguage: 'JavaScript',
+  catchPhrase: 'clear, save, run',
+});
+
+console.log(brit.grade('Trevor', 'JavaScript Classes'))
 
 /*
   TASK 5
