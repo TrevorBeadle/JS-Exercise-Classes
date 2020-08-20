@@ -51,10 +51,10 @@ class Person {
       this.stomach.push(edible);
     }
   }
-  poop(){
+  poop() {
     this.stomach = [];
   }
-  toString(){
+  toString() {
     return `${this.name}, ${this.age}`;
   }
 }
@@ -75,7 +75,7 @@ console.log(personThree.stomach);
 
 personThree.poop();
 
-console.log(personThree.stomach);
+// console.log(personThree.stomach);
 
 /*
   TASK 2
@@ -92,13 +92,31 @@ console.log(personThree.stomach);
 */
 
 class Car {
-  constructor(model, milesPerGallon){
+  constructor(model, milesPerGallon) {
     this.model = model;
     this.milesPerGallon = milesPerGallon;
     this.tank = 0;
     this.odometer = 0;
   }
+  fill(gallons) {
+    this.tank += gallons;
+    return `I filled the tank with ${this.tank} gallons`
+  }
+  drive(distance) {
+    this.odometer += distance;
+    this.tank -= distance / this.milesPerGallon;
+    if (this.tank <= 0) {
+      this.odometer = this.milesPerGallon * this.tank + this.odometer;
+      this.tank = 0;
+      return `I ran out of fuel at ${this.odometer} miles.`
+    }
+  }
 }
+const truck = new Car('tundra', 12);
+
+console.log(truck.fill(30));
+console.log(truck.drive(400));
+console.log(truck);
 
 /*
   TASK 3
