@@ -131,8 +131,22 @@ console.log(truck);
         + {name} and {location} of course come from the instance's own properties.
 */
 class Lambdasian {
-
+  constructor(attributes){
+    this.name = attributes.name;
+    this.age = attributes.age;
+    this.location = attributes.location;
+  }
+  speak(){
+    return `Hello, my name is ${this.name}, I am from ${this.location}.`;
+  }
 }
+
+const trevor = new Lambdasian({
+  name: 'Trevor',
+  age: 23,
+  location: 'Arkansas',
+})
+console.log(trevor.speak());
 
 /*
   TASK 4
@@ -149,7 +163,7 @@ class Lambdasian {
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
 class Instructor {
-
+  
 }
 
 /*
